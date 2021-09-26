@@ -1,7 +1,7 @@
 
 # Simple Port Scanner
 [![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
-![dependencies](img/dependencies_no.svg)
+![dependencies](img/dependencies-no.svg)
 
 
 TCP/IP Connect port scanner, no external libraries. This application maintains no dependencies on third-party modules.
@@ -17,6 +17,8 @@ $ git clone https://github.com/curvtd/inspector.git
 ```
 
 ## Usage
+
+![usage](img/usage.gif)
 
 ```
 usage: inspector.py -i IP [-n [PORT]] [-x [PORT]] [-h]
