@@ -17,7 +17,8 @@ header = r"""
 
 
 def argument_parser():
-    parser = ArgumentParser(add_help=False)
+    parser = ArgumentParser(add_help=False,
+                            description="A simple pure-python port scanner")
     required = parser.add_argument_group('required arguments')
     optional = parser.add_argument_group('optional arguments')
 
