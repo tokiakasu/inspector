@@ -63,18 +63,23 @@ def validation(target):
         sys.exit()
 
 
-'''Port scanning'''
-target, port_minimum, port_maximum = argument_parser()
-validation(target)
-try:
-    for port in range(port_minimum, port_maximum):
-        soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        socket.setdefaulttimeout(0.5)
-        result = soc.connect_ex((target, port))  # return an error indicator
-        if result == 0:
-            print(f"Open {target}:{port}")
-        soc.close()
+def main():
+    '''Port scanning'''
+    target, port_minimum, port_maximum = argument_parser()
+    validation(target)
+    try:
+        for port in range(port_minimum, port_maximum):
+            soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            socket.setdefaulttimeout(0.5)
+            result = soc.connect_ex((target, port))  # return an error indicator
+            if result == 0:
+                print(f"Open {target}:{port}")
+            soc.close()
 
-except KeyboardInterrupt:
-    print("\nExiting program.")
-    sys.exit()
+    except KeyboardInterrupt:
+        print("\nExiting program.")
+        sys.exit()
+
+if __name__ == '__main__':
+    main()
+
